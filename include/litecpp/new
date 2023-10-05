@@ -1,0 +1,27 @@
+#ifndef litecpp_new_h
+#define litecpp_new_h
+
+#include <stddef.h>
+#include <windows/malloc.h>
+
+void* operator new(size_t size)
+{
+	return malloc(size);
+}
+
+void operator delete(void* ptr)
+{
+	free(ptr);
+}
+
+void* operator new[](size_t size)
+{
+	return malloc(size);
+}
+
+void operator delete[](void* ptr)
+{
+	free(ptr);
+}
+
+#endif 

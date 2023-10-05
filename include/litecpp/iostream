@@ -1,0 +1,27 @@
+#ifndef litecpp_iostream_h
+#define litecpp_iostream_h
+
+#include <windows/console.h>
+
+namespace std
+{
+	const char endl = '\n';
+
+	enum out
+	{
+		cout
+	};
+	enum in
+	{
+		cin
+	};
+
+	const std::out operator<<(std::out cout, const char* s)
+	{
+		ConsoleWrite(s);
+
+		return cout;
+	}
+}
+
+#endif 

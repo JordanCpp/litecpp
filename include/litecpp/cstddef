@@ -1,0 +1,6 @@
+#ifndef litecpp_cstddef_h
+#define litecpp_cstddef_h
+
+#include "stddef.h"
+
+#endif  
