@@ -1,7 +1,7 @@
 #ifndef litecpp_string_h
 #define litecpp_string_h
 
-#include "stddef.h"
+#include <stddef.h>
 #include <stdint.h>
 
 size_t strlen(const char * src)

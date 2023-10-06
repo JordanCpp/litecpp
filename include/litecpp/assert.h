@@ -3,6 +3,6 @@
 
 #include "windows/assert.h"
 
-#define assert(x) assert(x, "", __FILE__, __LINE__)
+#define assert(x) assert(x, #x, __FILE__, __LINE__)
 
 #endif

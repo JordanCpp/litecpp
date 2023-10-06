@@ -54,6 +54,24 @@ namespace std
 		{
 			return _content;
 		}
+
+		void reserve(size_t size)
+		{
+			if (size >= _capacity)
+			{
+				T* tmp = new T[size + 1];
+				memcpy(tmp, _content, size);
+				delete[] _content;
+				_content = tmp;
+				_capacity = size + 1;
+			}
+			else
+			{
+				_position = size;
+			}
+
+			_content[_position] = 0;
+		}
 	private:
 		size_t _capacity;
 		size_t _position;

@@ -1,58 +1,6 @@
 #ifndef litecpp_vector_h
 #define litecpp_vector_h
 
-#include "stddef.h"
-
-namespace std
-{
-	template <typename T>
-	class vector
-	{
-	public:
-		vector() :
-			_capacity(0),
-			_position(0),
-			_content(0)
-		{
-		}
-
-		vector(size_t count) :
-			_capacity(count),
-			_position(count),
-			_content(0)
-		{
-			_content = new T[_capacity];
-
-			for (size_t i = 0; i < _capacity; i++)
-			{
-				_content[i] = T();
-			}
-		}
-		
-		void reserve(size_t newalloc)
-		{
-			if (newalloc > _capacity)
-			{
-
-				T* p = new T[newalloc];
-
-				for (int i = 0; i < _position; i++)
-				{
-					p[i] = _content[i];
-				}
-
-				delete[] _content;
-
-				_content = p;
-
-				_capacity = newalloc;
-			}
-		}
-	private:
-		size_t _capacity;
-		size_t _position;
-		T* _content;
-	};
-}
+#include <stl/vector.hpp>
 
 #endif  
